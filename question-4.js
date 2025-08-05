@@ -15,14 +15,19 @@ const alphaTech = [
   ];
   
 
-const allEmployees = alphaTech.concat(betaSoft, gammaDev);
+  const allEmployees = []
+  .concat(
+    alphaTech.map(emp => ({ ...emp, company: 'alphaTech' })),
+    betaSoft.map(emp => ({ ...emp, company: 'betaSoft' })),
+    gammaDev.map(emp => ({ ...emp, company: 'gammaDev' }))
+  );
 
 const result = allEmployees.filter((employee) => {
-  return employee.department === 'Enginering' && employee.age > 20;
+  return employee.department === 'Engineering' && employee.age >= 20;
 }).map((employee) => {
   return {
     name: employee.name,
-    company: '' 
+    company:employee.company
   };
 });
 

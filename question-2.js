@@ -7,3 +7,11 @@ const students = [
 ];
 
 // เริ่มเขียนโค้ดตรงนี้
+let scoreStudents = students.filter(students => students.score > 50);
+console.log(scoreStudents);
+
+let addpointsScore = scoreStudents.map(students => students.score * 1.1);
+console.log(addpointsScore);
+
+let totalScore = addpointsScore.reduce((sum , score)=> sum + score, 0);
+console.log(totalScore);
